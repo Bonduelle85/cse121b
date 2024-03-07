@@ -21,7 +21,7 @@ imageElement.alt = `Profile image of ${fullName}`;
 
 /* Step 5 - Array */
 let favoriteFoods = ["Fried eggs", "Salad", "Chewing Marmalade", "Pasta"];
-foodElement.innerText = favoriteFoods;
+foodElement.innerHTML = favoriteFoods;
 
 let pizza = "Pizza";
 favoriteFoods.push(pizza);
