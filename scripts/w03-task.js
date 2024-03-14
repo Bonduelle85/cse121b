@@ -31,7 +31,7 @@ let multiply = (number1, number2) => number1 * number2;
 
 let  multiplyNumbers = () => {
     let number1 = Number(document.getElementById("factor1").value);
-    let number2 = Number(document.getElementById("factor1").value);
+    let number2 = Number(document.getElementById("factor2").value);
     document.getElementById("product").value = multiply(number1, number2);
 }
 document.getElementById("multiplyNumbers").addEventListener("click", multiplyNumbers);
