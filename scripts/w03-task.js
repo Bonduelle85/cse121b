@@ -50,16 +50,15 @@ document.getElementById("divideNumbers").addEventListener("click", divideNumbers
 
 /* Decision Structure */
 function getTotalDue() {
-    const checkbox = document.getElementById("member");
-    let numeric = document.getElementById("subtotal").value
+    const checkboxElement = document.getElementById("member");
+    const subtotalElement = document.getElementById("subtotal");
     const totalElement = document.getElementById("total")
-    if (checkbox.checked) {
-        numeric = numeric - numeric * 0.2
-        totalElement.innerText = `$${numeric.toFixed(2)}`
-    } else {
-        numeric *= 1
-        totalElement.innerText = `$${numeric.toFixed(2)}`
-    }
+    
+    const subtotal = parseFloat(subtotalElement.value);
+    const discount = checkboxElement.checked ? 0.2 : 0;
+
+    const totalDue = subtotal - (subtotal * discount);
+    totalElement.textContent = `$${totalDue.toFixed(2)}`;
   }
 document.getElementById("getTotal").addEventListener("click", getTotalDue);
 
