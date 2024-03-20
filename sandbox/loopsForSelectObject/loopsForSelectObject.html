@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loops and iteration</title>
+    <link rel="stylesheet" href="loopsForSelectObject.css">
+  </head>
+  <body>
+    <form name="selectForm">
+      <label for="musicTypes"
+        >Choose some music types, then click the button below:</label
+      >
+      <select id="musicTypes" name="musicTypes" multiple>
+        <option selected>R&B</option>
+        <option>Jazz</option>
+        <option>Blues</option>
+        <option>New Age</option>
+        <option>Classical</option>
+        <option>Opera</option>
+      </select>
+      <button id="btn" type="button">How many are selected?</button>
+      <div class="right">
+        You have selected :
+        <span class="larger" id="countSelected">--</span>
+      </div>
+    </form>
+
+    <h1>📆 Next 6 Days of the Week</h1>
+    <p id="today"></p>
+    <h2>Future Days of the Week</h2>
+    <ul></ul>
+
+    <script src="loopsForSelectObject.js"></script>
+  </body>
+</html>
