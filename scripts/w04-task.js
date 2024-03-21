@@ -45,10 +45,12 @@ myProfile.hobbies.forEach(hobby => {
 })
 /* Places Lived DataList */
 myProfile.placesLived.forEach(placeLived => {
+    // Description List: <dl>
+    // term: <dt>
     let dtElement = document.createElement("dt")
     dtElement.textContent = placeLived.place
     document.querySelector("#places-lived").appendChild(dtElement)
-    
+    // description: <dd>
     let ddElement = document.createElement("dd")
     ddElement.textContent = placeLived.length
     document.querySelector("#places-lived").appendChild(ddElement)
