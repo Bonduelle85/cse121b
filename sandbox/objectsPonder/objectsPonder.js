@@ -50,7 +50,7 @@ function setCourseInfo(course) {
 function renderSections(sections) {
   const html = sections.map(
     (section) =>
-      `<tr>
+    `<tr>
       <td>${section.sectionNum}</td>
       <td>${section.roomNum}</td>
       <td>${section.enrolled}</td>
