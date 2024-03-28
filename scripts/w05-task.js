@@ -66,8 +66,11 @@ const filterTemples = (temples) => {
       break;
 
     case "older":
+    //   let templesOlder1950 = temples.filter(
+    //     (temple) => Number(temple.dedicated.slice(0, 4)) < 1950
+    //   );
       let templesOlder1950 = temples.filter(
-        (temple) => Number(temple.dedicated.slice(0, 4)) < 1950
+        (temple) => new Date(temple.dedicated) < new Date(1950, 0, 1)
       );
       displayTemples(templesOlder1950);
       break;
