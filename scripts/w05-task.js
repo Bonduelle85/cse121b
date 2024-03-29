@@ -27,14 +27,45 @@ const displayTemples = async (temples) => {
 
 /* async getTemples Function using fetch()*/
 const getTemples = async () => {
-  const response = await fetch(url);
-  if (response.ok) {
-    const temples = await response.json();
-    temples.forEach((temple) => {
-      templeList.push(temple);
-    });
-    displayTemples(templeList);
-  }
+    const response = await fetch(url);
+    if (response.ok) {
+      const temples = await response.json();
+      temples.forEach((temple) => {
+        templeList.push(temple);
+      });
+      displayTemples(templeList);
+    }
+            // using then:
+  //   fetch(url)
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         throw new Error("Network response on ok");
+  //       }
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       data.forEach((temple) => {
+  //         templeList.push(temple);
+  //       });
+  //       displayTemples(templeList);
+  //     })
+  //     .catch((error) => {
+  //       console.error(`Fetch error: ${error}`);
+  //     });
+        // async await
+//   try {
+//     const response = await fetch(url);
+//     if (!response.ok) {
+//       throw new Error("Network response on ok");
+//     }
+//     const data = await response.json();
+//     data.forEach((temple) => {
+//       templeList.push(temple);
+//     });
+//     displayTemples(templeList);
+//   } catch (error) {
+//     console.error(`Fetch error: ${error}`);
+//   }
 };
 
 /* reset Function */
@@ -66,9 +97,9 @@ const filterTemples = (temples) => {
       break;
 
     case "older":
-    //   let templesOlder1950 = temples.filter(
-    //     (temple) => Number(temple.dedicated.slice(0, 4)) < 1950
-    //   );
+      //   let templesOlder1950 = temples.filter(
+      //     (temple) => Number(temple.dedicated.slice(0, 4)) < 1950
+      //   );
       let templesOlder1950 = temples.filter(
         (temple) => new Date(temple.dedicated) < new Date(1950, 0, 1)
       );

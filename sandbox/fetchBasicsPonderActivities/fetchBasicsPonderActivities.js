@@ -39,7 +39,7 @@ function doStuffList(data) {
     const html = `<li>${currentItem.name}</li>`;
     pokeListElement.innerHTML += html;
         // OR
-    // var li = document.createElement('li');
+    // let li = document.createElement('li');
     // li.innerHTML = currentItem.name
     // pokeListElement.appendChild(li)
   });
