@@ -83,17 +83,22 @@ const sortPokemons = (pokemons) => {
       displayPokemons(alphAscSortedPokemons);
       break;
 
-    case "alphaDESC":
-      let alphDescSortedPokemons = pokemons.sort((a, b) => {
-        if (a.name < b.name) return 1;
-        if (a.name > b.name) return -1;
+    case "byWeight":
+      let byWeightSortedPokemons = pokemons.sort((a, b) => {
+        if (a.weight < b.weight) return -1;
+        if (a.weight > b.weight) return 1;
         return 0;
       });
-      displayPokemons(alphDescSortedPokemons);
+      displayPokemons(byWeightSortedPokemons);
       break;
 
-    case "all":
-      displayPokemons(pokemonList);
+    case "byHeight":
+      let byHeightSortedPokemons = pokemons.sort((a, b) => {
+        if (a.height < b.height) return -1;
+        if (a.height > b.height) return 1;
+        return 0;
+      });
+      displayPokemons(byHeightSortedPokemons);
       break;
   }
 };
