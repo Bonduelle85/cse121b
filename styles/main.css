@@ -76,7 +76,7 @@ h1 {
 
 h2 {
     font-size: 1.5rem;
-    color: navy;
+    color: rgb(11, 99, 114);
     text-align: center;
     margin-top: 25px;
 }
@@ -276,6 +276,38 @@ footer {
     width: 250px;
     height: auto;
     box-shadow: 0 0 30px #777;
+    margin: .5rem;
+}
+
+#pokemons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: .5rem;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+#pokemons article {
+    height: 300px;
+    margin: .5rem;
+    border: 1px solid rgba(0, 0, 0, .1);
+    padding: 1rem;
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#pokemons h4 {
+    color: rgb(10, 95, 148);
+    font-size: smaller;
+}
+
+#pokemons img {
+    width: 250px;
+    height: auto;
+    box-shadow: 0 0 30px #7747e8;
     margin: .5rem;
 }
 

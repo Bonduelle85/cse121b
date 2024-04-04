@@ -17,11 +17,9 @@ function doStuff(data) {
     <h2>${data.name}</h2>
     <img src="${data.sprites.front_default}" alt="${data.name}">`;
   outputElement.innerHTML = html;
-  console.log("first: ", results);
 }
 
 function doStuffList(data) {
-  console.log(data);
   const pokeListElement = document.querySelector("#outputList");
   const pokeList = data.results;
 
@@ -44,11 +42,6 @@ function doStuffList(data) {
     // pokeListElement.appendChild(li)
   });
 }
-
-function sortPokemon(list) {
-
-}
-
 
 getPokemonData(url, doStuff);
 console.log("second: ", results);
