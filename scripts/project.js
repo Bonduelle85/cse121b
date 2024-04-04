@@ -68,12 +68,12 @@ const clear = () => {
   }
 };
 
-/* filterTemples Function */
-const filterPokemons = (pokemons) => {
+/* sortPokemons Function */
+const sortPokemons = (pokemons) => {
   clear();
-  const filter = document.querySelector("#filtered").value;
+  const sorting = document.querySelector("#sorted").value;
 
-  switch (filter) {
+  switch (sorting) {
     case "alphASC":
       let alphAscSortedPokemons = pokemons.sort((a, b) => {
         if (a.name < b.name) return -1;
@@ -85,12 +85,8 @@ const filterPokemons = (pokemons) => {
 
     case "alphaDESC":
       let alphDescSortedPokemons = pokemons.sort((a, b) => {
-        if (a.name < b.name) {
-          return 1;
-        }
-        if (a.name > b.name) {
-          return -1;
-        }
+        if (a.name < b.name) return 1;
+        if (a.name > b.name) return -1;
         return 0;
       });
       displayPokemons(alphDescSortedPokemons);
@@ -102,7 +98,43 @@ const filterPokemons = (pokemons) => {
   }
 };
 
+/* filterPokemons Function */
+const filterPokemons = (pokemons) => {
+  clear();
+  const filter = document.querySelector("#filtered").value;
+
+  switch (filter) {
+    case "heightAbove":
+      let heightAboveFilteredPokemons = pokemons.filter(pokemon => pokemon.height >= 6);
+      displayPokemons(heightAboveFilteredPokemons);
+      break;
+
+    case "heightLess":
+      let heightLessFilteredPokemons = pokemons.filter(pokemon => pokemon.height < 6);
+      displayPokemons(heightLessFilteredPokemons);
+      break;
+
+    case "weightAbove":
+      let weightAboveFilteredPokemons = pokemons.filter(pokemon => pokemon.weight >= 60);
+      displayPokemons(weightAboveFilteredPokemons);
+      break;
+
+    case "weightLess":
+      let weightLessFilteredPokemons = pokemons.filter(pokemon => pokemon.weight < 60);
+      displayPokemons(weightLessFilteredPokemons);
+      break;
+
+    case "all":
+      displayPokemons(pokemonList);
+      break;
+  }
+};
+
 /* Event Listener */
+document.querySelector("#sorted").addEventListener("change", () => {
+  sortPokemons(pokemonList);
+});
+
 document.querySelector("#filtered").addEventListener("change", () => {
   filterPokemons(pokemonList);
 });

@@ -28,10 +28,20 @@
     <h1>W06: Project</h1>
     <h2>Fetch(): Some Pokemons</h2>
 
-    <select id="filtered" title="Choose a data filter.">
-        <option value="" disabled selected>Filter</option>
+    <select id="sorted" title="Choose a data sorting.">
+        <option value="" disabled selected>Sort</option>
         <option value="alphASC">Alphabetically ASC</option>
         <option value="alphaDESC">Alphabetically DESC</option>
+        <option value="all">No sorting</option>
+    </select>
+
+    <select id="filtered" title="Choose a data filter.">
+        <option value="" disabled selected>Filter</option>
+        <option value="heightAbove">Height 6 and above</option>
+        <option value="heightLess">Height less than 6</option>
+        <option value="weightAbove">Weight 60 and above</option>
+        <option value="weightLess">Weight less than 60</option>
+        <option value="all">All</option>
     </select>
 
     <div id="pokemons"></div>
