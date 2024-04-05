@@ -6,7 +6,7 @@ let pokemonIndex = 1; //  index of the first pokemon according to the API
 const pokemonsElement = document.querySelector("#pokemons");
 let pokemonList = []; // array of pokemon-objects
 
-/* async getTemples Function using fetch()*/
+/* async getPokemonsData Function using fetch()*/
 const getPokemonsData = async () => {
   for (let i = 1; i <= LIMIT; i++) {
     try {
