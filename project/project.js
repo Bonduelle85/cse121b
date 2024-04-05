@@ -4,10 +4,11 @@
 const LIMIT = 50; // Pokemon download limit
 let pokemonIndex = 1; //  index of the first pokemon according to the API
 const pokemonsElement = document.querySelector("#pokemons");
-let pokemonList = []; // array of pokemon-objects
+let pokemonList = []; // array of pokemon-objects - I decided to store Pokemon information in my object list.
 
 /* async getPokemonsData Function using fetch()*/
 const getPokemonsData = async () => {
+  // Since the request for a list of Pokemon does not contain the information I need, I get information about each Pokemon using a for loop.
   for (let i = 1; i <= LIMIT; i++) {
     try {
       const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}/`);
@@ -17,12 +18,14 @@ const getPokemonsData = async () => {
       }
       const data = await response.json();
 
+      // create an object and fill it with data
       pokemonList.push({
         name: data.name,
         imageUrl: data.sprites.other.dream_world.front_default,
         height: data.height,
         weight: data.weight,
       });
+
     } catch (error) {
       console.error(`Fetch error: ${error}`);
     }
@@ -110,22 +113,30 @@ const filterPokemons = (pokemons) => {
 
   switch (filter) {
     case "heightAbove":
-      let heightAboveFilteredPokemons = pokemons.filter(pokemon => pokemon.height >= 6);
+      let heightAboveFilteredPokemons = pokemons.filter(
+        (pokemon) => pokemon.height >= 6
+      );
       displayPokemons(heightAboveFilteredPokemons);
       break;
 
     case "heightLess":
-      let heightLessFilteredPokemons = pokemons.filter(pokemon => pokemon.height < 6);
+      let heightLessFilteredPokemons = pokemons.filter(
+        (pokemon) => pokemon.height < 6
+      );
       displayPokemons(heightLessFilteredPokemons);
       break;
 
     case "weightAbove":
-      let weightAboveFilteredPokemons = pokemons.filter(pokemon => pokemon.weight >= 60);
+      let weightAboveFilteredPokemons = pokemons.filter(
+        (pokemon) => pokemon.weight >= 60
+      );
       displayPokemons(weightAboveFilteredPokemons);
       break;
 
     case "weightLess":
-      let weightLessFilteredPokemons = pokemons.filter(pokemon => pokemon.weight < 60);
+      let weightLessFilteredPokemons = pokemons.filter(
+        (pokemon) => pokemon.weight < 60
+      );
       displayPokemons(weightLessFilteredPokemons);
       break;
 
@@ -135,7 +146,7 @@ const filterPokemons = (pokemons) => {
   }
 };
 
-/* Event Listener */
+/* Event Listeners */
 document.querySelector("#sorted").addEventListener("change", () => {
   sortPokemons(pokemonList);
 });
